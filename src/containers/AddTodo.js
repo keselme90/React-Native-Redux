@@ -2,13 +2,14 @@ import React, {useState} from 'react'
 import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native'
 import {Ionicons} from '@expo/vector-icons'
 import {connect} from 'react-redux' // used to connect the Store with this component
+import {addNewTodo} from '../redux/actions'
 
 function AddTodo(props) {
 
     const [state, setState] = useState({text: ''})
 
     addTodo = (text) => {
-        props.dispatch({type:'ADD_TODO', text})
+        props.dispatch(addNewTodo(text))
         setState({text: ''})
     }
 
