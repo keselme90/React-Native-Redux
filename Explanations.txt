@@ -1,0 +1,28 @@
+connect() - This function allows the componnect to the store and update the state. This function takes two argments:
+
+    - mapStateToProps
+    - mapDispatchToProps
+
+        To use the connect function in the component we need to import it from 'react-redux' library:
+
+            import {connect} from 'react-redux'
+
+        Then, when we are exporting the component we will connect it to the store as such:
+
+            export default connect(mapStateToProps, mapDispatchToProps)(MyComponent)
+
+mapStateToProps() - is used when we want to show the data in the component. We will create a function that returns an object.
+                    The function takes one argument and it's the state.
+                    We pass the state into the function so that later we can grab the data we need for the specific component.
+
+    const mapStateToProps = state => ({
+            data: state.data
+    })
+
+                    If we want to use that data, we need to pass it as props to our component:
+
+    const MyComponent = (props) => {
+        return (
+            <Text> props.data </Text>
+        )
+    }

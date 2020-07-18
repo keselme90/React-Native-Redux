@@ -9,7 +9,7 @@ function AddTodo(props) {
     const [state, setState] = useState({text: ''})
 
     addTodo = (text) => {
-        props.dispatch(addNewTodo(text))
+        props.addNewTodo(text)
         setState({text: ''})
     }
 
@@ -31,7 +31,11 @@ function AddTodo(props) {
     )
 }
 
-export default connect()(AddTodo) //This is how we connect the Store with the component
+const mapDispatchToProps = dispatch => ({
+    addNewTodo: text => dispatch(addNewTodo(text))
+})
+
+export default connect(null, mapDispatchToProps)(AddTodo) //This is how we connect the Store with the component
 
 const styles = StyleSheet.create({
     container:{
