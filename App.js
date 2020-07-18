@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import TodoApp from './src/TodoApp';
-import store from './redux/store'
+import store from './src/redux/store'
 import {Provider} from 'react-redux'
 
 export default function App() {
