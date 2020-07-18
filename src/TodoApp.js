@@ -1,10 +1,11 @@
 import React from "react"
 import { View, Text, StyleSheet } from "react-native"
+import AddTodo from './components'
 
 function TodoApp () {
     return (
         <View style={styles.container}>
-            <Tex>TodoApp</Tex>
+            <AddTodo/>
         </View>
     )
 
@@ -15,7 +16,6 @@ export default TodoApp;
 const style = StyleSheet.create({
     contaier: {
         flex: 1,
-        alignItemsL: 'center',
-        justifyContent: 'center'
+        padding: 40
     }
 })
