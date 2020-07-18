@@ -1,13 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import TodoApp from './src/TodoApp';
+import store from './redux/store'
+import {Provider} from 'react-redux'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    // With the provider our store can be accessed anywhere in the app
+    // regardless how deep we need it.
+    <Provider store = {store}> 
+      <TodoApp/>
+    </Provider>
   );
 }
 
